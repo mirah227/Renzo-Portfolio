@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #07080B;
+    color: #F3F4F6;
+  }
+}
+
+.font-display {
+  font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Warm golden amber accent color matching the exact sample */
+.text-accent-amber {
+  color: #EAA039;
+}
+
+.bg-accent-amber {
+  background-color: #EAA039;
+}
+
+.border-accent-amber {
+  border-color: #EAA039;
+}
+
+/* Subtle background grid pattern */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+}
+
+/* Glass & dashboard card styling matching the dark sample */
+.dark-panel {
+  background: #0D0E14;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dark-panel-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dark-panel-hover:hover {
+  background: #11131B;
+  border-color: rgba(234, 160, 57, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+}
+
