@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Twitter, Send, Radio } from 'lucide-react';
+import { ArrowUp, Twitter, Send, Radio, Mail } from 'lucide-react';
 import { NAV_ITEMS } from '../data/portfolioData';
 import { PROFILE_CONFIG } from '../data/profileConfig';
 
@@ -66,6 +66,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection }) => {
                 title="Telegram Channel (RENZO | WEB3 JOURNEY)"
               >
                 <Radio className="w-4 h-4" />
+              </a>
+              <a
+                href={`mailto:${PROFILE_CONFIG.email}`}
+                className="w-8 h-8 rounded-md bg-white/[0.04] hover:bg-[#EAA039]/20 hover:text-[#EAA039] border border-white/[0.08] flex items-center justify-center transition-colors text-slate-400"
+                aria-label="Email"
+                title={`Email (${PROFILE_CONFIG.email})`}
+              >
+                <Mail className="w-4 h-4" />
               </a>
             </div>
           </div>

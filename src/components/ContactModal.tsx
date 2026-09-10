@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Mail, Twitter, Radio, Copy, Check, Send, Sparkles } from 'lucide-react';
+import { X, Mail, Twitter, Radio, Check, Send, Sparkles } from 'lucide-react';
 import { PROFILE_CONFIG } from '../data/profileConfig';
 
 interface ContactModalProps {
@@ -8,7 +8,6 @@ interface ContactModalProps {
 }
 
 export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
-  const [copied, setCopied] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -18,12 +17,6 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
   });
 
   if (!isOpen) return null;
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(PROFILE_CONFIG.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -117,25 +110,21 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
             <span className="text-xs text-[#EAA039] group-hover:translate-x-0.5 transition-transform">↗</span>
           </a>
 
-          <button
-            onClick={handleCopyEmail}
+          <a
+            href={`mailto:${PROFILE_CONFIG.email}`}
             className="flex items-center justify-between p-3 rounded-lg bg-white/[0.03] border border-white/[0.08] hover:border-[#EAA039]/40 text-left transition-colors cursor-pointer group"
           >
             <div className="flex items-center gap-2.5 overflow-hidden">
               <Mail className="w-4 h-4 text-[#EAA039] shrink-0" />
               <div className="truncate">
-                <div className="text-[10px] font-mono text-slate-400">Email (Direct)</div>
+                <div className="text-[10px] font-mono text-slate-400">Email</div>
                 <div className="text-xs font-semibold text-slate-200 truncate">
                   {PROFILE_CONFIG.email}
                 </div>
               </div>
             </div>
-            {copied ? (
-              <Check className="w-3.5 h-3.5 text-[#EAA039] shrink-0" />
-            ) : (
-              <Copy className="w-3.5 h-3.5 text-slate-400 group-hover:text-white shrink-0" />
-            )}
-          </button>
+            <span className="text-xs text-[#EAA039] group-hover:translate-x-0.5 transition-transform">↗</span>
+          </a>
         </div>
 
         {/* Form */}

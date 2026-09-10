@@ -9,7 +9,7 @@ export const PROFILE_CONFIG = {
   specialties: ['Web3 Growth', 'AI Systems', 'Social Attention', 'User Acquisition', 'Community Building'],
   // Uploaded original profile photo
   imageUrl: '/renzo.jpg',
-  email: 'renzo@growthweb3.xyz',
+  email: 'renzoblvck@gmail.com',
   telegram: 'https://t.me/Renzoblvue',
   telegramHandle: '@Renzoblvue',
   telegramChannel: 'https://t.me/Renzoblvu',

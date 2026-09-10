@@ -12,7 +12,7 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenContact }) => {
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#EAA039]/5 rounded-full blur-[160px] pointer-events-none -z-10" />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-2xl sm:rounded-3xl bg-[#0C0D12] border border-white/[0.08] p-8 sm:p-12 lg:p-14 text-center">
           {/* Subtle top amber bar */}
           <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#EAA039]/40 to-transparent" />
@@ -43,7 +43,7 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenContact }) => {
           </div>
 
           {/* Clean Social / Contact Channels Area */}
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
             {/* 1. X / Twitter */}
             <a
               href={PROFILE_CONFIG.twitter}
@@ -109,6 +109,27 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenContact }) => {
               </div>
               <div className="mt-4 pt-3 border-t border-white/[0.04] flex items-center justify-between text-[11px] font-mono text-slate-400 group-hover:text-slate-200">
                 <span>Join channel</span>
+                <span className="text-[#EAA039] group-hover:translate-x-0.5 transition-transform">↗</span>
+              </div>
+            </a>
+
+            {/* 4. Email */}
+            <a
+              href={`mailto:${PROFILE_CONFIG.email}`}
+              className="p-5 rounded-xl bg-[#08090D] border border-white/[0.08] hover:border-[#EAA039]/40 transition-all group flex flex-col justify-between"
+              aria-label={`Email ${PROFILE_CONFIG.email}`}
+            >
+              <div>
+                <div className="flex items-center justify-between text-xs font-mono text-slate-400">
+                  <span className="uppercase tracking-wider">Email</span>
+                  <Mail className="w-4 h-4 text-[#EAA039]" />
+                </div>
+                <div className="mt-2.5 font-display font-bold text-white text-sm sm:text-base group-hover:text-[#EAA039] transition-colors break-all">
+                  {PROFILE_CONFIG.email}
+                </div>
+              </div>
+              <div className="mt-4 pt-3 border-t border-white/[0.04] flex items-center justify-between text-[11px] font-mono text-slate-400 group-hover:text-slate-200">
+                <span>Send direct email</span>
                 <span className="text-[#EAA039] group-hover:translate-x-0.5 transition-transform">↗</span>
               </div>
             </a>
